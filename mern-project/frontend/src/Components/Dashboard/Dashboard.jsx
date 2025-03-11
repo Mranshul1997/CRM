@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { handleSuccess } from "../../utils";
+import { handleSuccess } from "../../Utils";
 import { ToastContainer } from "react-toastify";
 
 function Dashboard() {

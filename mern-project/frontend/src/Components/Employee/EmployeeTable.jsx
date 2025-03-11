@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { DeleteEmployeeById } from "../../api";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 
 function EmployeeTable({
   employees,

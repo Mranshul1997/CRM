@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 import { CreateLead, UpdateLeadById } from "../../api";
 
 function AddLead({ showModal, setShowModal, fetchLeads, leadObj }) {
@@ -76,7 +76,11 @@ function AddLead({ showModal, setShowModal, fetchLeads, leadObj }) {
             <h5 className="modal-title">
               {updateMode ? "Update Lead" : "Add Lead"}
             </h5>
-            <button type="button" className="btn-close" onClick={handleModalClose}></button>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={handleModalClose}
+            ></button>
           </div>
           <div className="modal-body">
             <form onSubmit={handleAddLead}>

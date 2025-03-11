@@ -1,7 +1,7 @@
 // src/Components/Timesheet/TimesheetTable.js
 import React from "react";
 import { DeleteTimesheetById } from "../../api";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 
 function TimesheetTable({
   timesheets,

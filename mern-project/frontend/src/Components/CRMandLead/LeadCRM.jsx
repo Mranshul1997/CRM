@@ -3,7 +3,7 @@ import LeadTable from "./LeadTable";
 import AddLead from "./AddLead";
 import { DeleteLeadById, GetAllLeads } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 
 const LeadCRM = () => {
   const [showModal, setShowModal] = useState(false);
@@ -46,7 +46,10 @@ const LeadCRM = () => {
       <div className="w-100 d-flex justify-content-center">
         <div className="w-80 border bg-light p-3">
           <div className="d-flex justify-content-between mb-3">
-            <button className="btn btn-primary" onClick={() => setShowModal(true)}>
+            <button
+              className="btn btn-primary"
+              onClick={() => setShowModal(true)}
+            >
               Add
             </button>
             <input
@@ -70,7 +73,11 @@ const LeadCRM = () => {
           />
         </div>
       </div>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+      />
     </div>
   );
 };

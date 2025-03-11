@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 import { CreateProject, UpdateProjectById } from "../../api";
 
 function AddProject({ showModal, setShowModal, fetchProjects, projectObj }) {
@@ -74,7 +74,11 @@ function AddProject({ showModal, setShowModal, fetchProjects, projectObj }) {
             <h5 className="modal-title">
               {updateMode ? "Update Project" : "Add Project"}
             </h5>
-            <button type="button" className="btn-close" onClick={handleModalClose}></button>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={handleModalClose}
+            ></button>
           </div>
           <div className="modal-body">
             <form onSubmit={handleAddProject}>

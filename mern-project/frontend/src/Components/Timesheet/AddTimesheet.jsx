@@ -1,14 +1,19 @@
 // src/Components/Timesheet/AddTimesheet.js
 import React, { useEffect, useState } from "react";
-import { notify } from "../../utils";
-import { 
-  CreateTimesheet, 
-  UpdateTimesheetById, 
-  GetAllEmployees, 
-  GetAllProjects 
+import { notify } from "../../Utils";
+import {
+  CreateTimesheet,
+  UpdateTimesheetById,
+  GetAllEmployees,
+  GetAllProjects,
 } from "../../api";
 
-function AddTimesheet({ showModal, setShowModal, fetchTimesheets, timesheetObj }) {
+function AddTimesheet({
+  showModal,
+  setShowModal,
+  fetchTimesheets,
+  timesheetObj,
+}) {
   const [timesheet, setTimesheet] = useState({
     employee: "",
     project: "",
@@ -27,7 +32,7 @@ function AddTimesheet({ showModal, setShowModal, fetchTimesheets, timesheetObj }
     { _id: "6123456789abcdef01234569", name: "Vue.js Development" },
     { _id: "6123456789abcdef0123456a", name: "Node.js Backend" },
   ];
-  
+
   useEffect(() => {
     if (timesheetObj) {
       setTimesheet(timesheetObj);
@@ -44,7 +49,7 @@ function AddTimesheet({ showModal, setShowModal, fetchTimesheets, timesheetObj }
         // Adjust based on your API response structure
         setEmployees(empData?.data?.employees || []);
         setProjects(
-          (projData?.data?.projects && projData.data.projects.length > 0)
+          projData?.data?.projects && projData.data.projects.length > 0
             ? projData.data.projects
             : defaultProjects
         );
@@ -110,7 +115,11 @@ function AddTimesheet({ showModal, setShowModal, fetchTimesheets, timesheetObj }
             <h5 className="modal-title">
               {updateMode ? "Update Timesheet" : "Add Timesheet"}
             </h5>
-            <button type="button" className="btn-close" onClick={handleModalClose}></button>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={handleModalClose}
+            ></button>
           </div>
           <div className="modal-body">
             <form onSubmit={handleAddTimesheet}>

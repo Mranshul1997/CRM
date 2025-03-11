@@ -3,7 +3,7 @@ import ProjectTable from "./ProjectTable";
 import AddProject from "./AddProject";
 import { DeleteProjectById, GetAllProjects } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 
 const ProjectManagement = () => {
   const [showModal, setShowModal] = useState(false);

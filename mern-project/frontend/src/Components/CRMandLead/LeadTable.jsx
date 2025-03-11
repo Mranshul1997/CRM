@@ -1,9 +1,22 @@
 import React from "react";
 import { DeleteLeadById } from "../../api";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 
-function LeadTable({ leads, pagination = { currentPage: 1, totalPages: 1 }, fetchLeads, handleUpdateLead }) {
-  const headers = ["Name", "Email", "Phone", "Source", "Status", "Notes", "Actions"];
+function LeadTable({
+  leads,
+  pagination = { currentPage: 1, totalPages: 1 },
+  fetchLeads,
+  handleUpdateLead,
+}) {
+  const headers = [
+    "Name",
+    "Email",
+    "Phone",
+    "Source",
+    "Status",
+    "Notes",
+    "Actions",
+  ];
   const { currentPage, totalPages } = pagination;
 
   const handleNextPage = () => {
@@ -12,13 +25,11 @@ function LeadTable({ leads, pagination = { currentPage: 1, totalPages: 1 }, fetc
     }
   };
 
-
   const Leads = Array.isArray(leads)
-  ? leads
-  : leads?.data && Array.isArray(leads.data.leads)
-  ? leads.data.leads
-  : [];
-
+    ? leads
+    : leads?.data && Array.isArray(leads.data.leads)
+    ? leads.data.leads
+    : [];
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
@@ -70,14 +81,19 @@ function LeadTable({ leads, pagination = { currentPage: 1, totalPages: 1 }, fetc
     </tr>
   );
 
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   return (
     <>
       <table className="table table-striped">
         <thead>
           <tr>
-            {headers.map((header, idx) => <th key={idx}>{header}</th>)}
+            {headers.map((header, idx) => (
+              <th key={idx}>{header}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -96,19 +112,29 @@ function LeadTable({ leads, pagination = { currentPage: 1, totalPages: 1 }, fetc
           Page {currentPage} of {totalPages}
         </span>
         <div>
-          <button className="btn btn-outline-primary me-2" onClick={handlePreviousPage} disabled={currentPage === 1}>
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+          >
             Previous
           </button>
           {pageNumbers.map((page) => (
             <button
               key={page}
-              className={`btn btn-outline-primary me-1 ${currentPage === page ? "active" : ""}`}
+              className={`btn btn-outline-primary me-1 ${
+                currentPage === page ? "active" : ""
+              }`}
               onClick={() => handlePagination(page)}
             >
               {page}
             </button>
           ))}
-          <button className="btn btn-outline-primary ms-2" onClick={handleNextPage} disabled={currentPage === totalPages}>
+          <button
+            className="btn btn-outline-primary ms-2"
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
             Next
           </button>
         </div>

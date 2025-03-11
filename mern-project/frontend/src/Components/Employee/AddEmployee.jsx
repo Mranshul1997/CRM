@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { notify } from "../../utils";
+import { notify } from "../../Utils";
 import { CreateEmployee, UpdateEmployeeById } from "../../api";
 
 function AddEmployee({ showModal, setShowModal, fetchEmployees, employeeObj }) {

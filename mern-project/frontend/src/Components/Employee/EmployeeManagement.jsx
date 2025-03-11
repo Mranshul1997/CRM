@@ -3,7 +3,7 @@ import EmployeeTable from "./EmployeeTable";
 import AddEmployee from "./AddEmployee";
 import { DeleteEmployeeById, GetAllEmployees } from "../../api";
 import { ToastContainer } from "react-toastify";
-// import { notify } from "../../utils";
+// import { notify } from "../../Utils";
 
 const EmployeeManagement = () => {
   const [showModal, setShowModal] = useState(false);
