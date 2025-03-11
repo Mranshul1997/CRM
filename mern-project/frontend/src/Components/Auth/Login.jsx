@@ -62,7 +62,7 @@ function Login() {
     >
       <div
         className="card shadow-lg p-4"
-        style={{
+        style={{a
           width: "100%",
           maxWidth: "400px",
           backgroundColor: "#d0dbe9",
