@@ -52,21 +52,24 @@ function Login() {
     <div
       className="min-vh-100 d-flex align-items-center justify-content-center"
       style={{
-        backgroundImage:
-          "url('https://miro.medium.com/v2/resize:fit:1400/1*QtX9tWcVWv1YFYr_rFEjbA.gif')",
+        backgroundImage:"url('https://miro.medium.com/v2/resize:fit:1400/1*QtX9tWcVWv1YFYr_rFEjbA.gif')",
+        // backgroundColor:"#d8d5f2",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "center",
         backgroundPosition: "center",
         width: "100%",
+        position:"relative"
       }}
     >
       <div
         className="card shadow-lg p-4"
-        style={{a
+        style={{
           width: "100%",
           maxWidth: "400px",
           backgroundColor: "#d0dbe9",
-          margin: "auto", // Better centering
+          margin: "auto",
+          position:"absolute",
+          left:"240px"
         }}
       >
         <div className="card-body">
