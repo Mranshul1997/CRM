@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:7000";
+const BASE_URL = "https://mern-project-badc.onrender.com";
 
 // ===================
 // Employee Functions

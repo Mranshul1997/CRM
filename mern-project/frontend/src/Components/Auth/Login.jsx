@@ -25,7 +25,7 @@ function Login() {
     }
 
     try {
-      const url = `http://localhost:7000/api/auth/login`; // Fixed URL typo
+      const url = `https://mern-project-badc.onrender.com/api/auth/login`; // Fixed URL typo
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

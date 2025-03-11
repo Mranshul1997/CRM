@@ -24,7 +24,7 @@ function Register() {
       return handleError("Name, email and password are required");
     }
     try {
-      const url = `http://localhost:7000/api/auth/signup`;
+      const url = `https://mern-project-badc.onrender.com/api/auth/signup`;
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
