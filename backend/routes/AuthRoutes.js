@@ -2,7 +2,7 @@ const { signup, login } = require("../controllers/AuthController");
 const {
   signupValidation,
   loginValidation,
-} = require("../Middlewares/AuthValidation");
+} = require("../middlewares/AuthValidation");
 
 const router = require("express").Router();
 
