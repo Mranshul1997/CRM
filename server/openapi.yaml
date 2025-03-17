@@ -8,7 +8,7 @@ info:
   description: 'CRM User Management API: Manage user registration, login (basic & OAuth), profiles, and CRUD operations for CRM users.'
 servers:
   - description: Development phase (loop-back ip)
-    url: http://localhost:3000/api
+    url: https://crm-1mhb.onrender.com/api
 paths:
   '/contacts':
     get:
