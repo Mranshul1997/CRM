@@ -31,7 +31,7 @@ const port = process.env.PORT || 3000;
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173", "http://localhost:4173","http://localhost:5175"],
+    origin: ["http://localhost:5173", "http://localhost:4173","https://crm-1mhb.onrender.com"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     // allowedHeaders: ["Content-Type", "Authorization", "x-uploadthing-version"],
     optionsSuccessStatus: 204,
