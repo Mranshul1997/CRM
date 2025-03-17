@@ -58,6 +58,6 @@ app.use("/api/auth", authRouter);
 app.use("/api/uploadthing",createRouteHandler({  router: uploadRouter,  config: {},}),
 );
 
-app.listen(3000, () => {
-  console.log("info", `Server listening on port `);
+app.listen(port, () => {
+  console.log("info", `Server listening on port${port} `);
 });
