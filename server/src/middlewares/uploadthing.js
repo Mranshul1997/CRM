@@ -29,11 +29,11 @@ const uploadRouter = {
     },
   })
     .onUploadError((err) =>
-      console.log("error", "[uploadthing] Error uploading data", err),
+      console.log("error ", "[uploadthing] Error uploading data", err),
     )
     .onUploadComplete((data) => {
       console.log("info", "[uploadthing] upload completed", data);
     }),
-};
+  };
 
 module.exports = uploadRouter;

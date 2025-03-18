@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const snazApi = createApi({
   reducerPath: "snazApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://crm-1mhb.onrender.com/api",
+    baseUrl: "http://localhost:8080/api",
     // prepareHeaders(headers) {
     //   const token = import.meta.env.VITE_API_KEY;
     //   if (token) headers.set("Authorization", `Bearer ${token}`);

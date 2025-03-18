@@ -9,7 +9,8 @@ require("dotenv").config();
 const authRouter = express.Router();
 
 authRouter.get("/whoami", passport.authenticate("session"), (req, res) => {
-  if (!req.user) return res.status(401).json({ type: "Unauthorized", message: "Session timeout." });
+  if (!req.user)
+  return res.status(401).json({ type: "Unauthorized", message: "Session timeout." });
   return res.json(req.user);
 });
 
@@ -23,7 +24,7 @@ authRouter.post(
     req.login(req.user, (err) => {
       if (err) return handleError(err, res);
       return res.status(200).json({
-        // session: req.sessionID,
+        session: req.sessionID,
         user: req.user,
       });
     });

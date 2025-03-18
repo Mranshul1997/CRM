@@ -3,6 +3,7 @@ const { logger } = require("../../utils/logger");
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
+  service: "gmail",
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT,
   secure: false, // we use no secure port 587

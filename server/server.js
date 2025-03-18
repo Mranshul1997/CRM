@@ -27,16 +27,24 @@ const authRouter = require("./src/routes/auth.routes");
 const uploadRouter = require("./src/middlewares/uploadthing");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 6000;
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173", "http://localhost:4173","https://crm-1mhb.onrender.com","https://crm-1-m6id.onrender.com"],
+    origin: ["http://localhost:5173", "http://localhost:4173"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
-    // allowedHeaders: ["Content-Type", "Authorization", "x-uploadthing-version"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "x-uploadthing-version",
+      "x-uploadthing-signature", // ✅ Important for UploadThing
+      // "x-uploadthing-api-key",
+    ],
+    exposedHeaders: ["x-uploadthing-version"], // ✅ Helps with debugging
     optionsSuccessStatus: 204,
-  }),
+  })
 );
+
 
 app.use(express.json()); // Parse JSON body data
 app.use(urlencoded({ extended: true })); //  Parses urlencoded bodies.
@@ -60,5 +68,5 @@ app.use("/api/uploadthing",createRouteHandler({  router: uploadRouter,  config: 
 );
 
 app.listen(port, () => {
-  console.log("info", `Server listening on port${port} `);
+  console.log("info", `Server listening on port ${port} `);
 });
