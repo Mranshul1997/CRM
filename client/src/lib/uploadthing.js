@@ -1,7 +1,7 @@
 import { generateUploadButton, generateUploadDropzone } from "@uploadthing/react";
 import { generateReactHelpers } from "@uploadthing/react/hooks";
 
-const URL = "http://localhost:8080/api/uploadthing";
+const URL = "https://crm-mpqk.onrender.com/api/uploadthing";
 
 export const { useUploadThing, getRouteConfig, uploadFiles } = generateReactHelpers({
   url: URL,

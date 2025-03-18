@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // define actions :
 
 export const fetchCompanies = createAsyncThunk("companies/fetchCompanies", async () => {
-  const response = await fetch("http://localhost:8080/api/companies", {
+  const response = await fetch("https://crm-mpqk.onrender.com/api/companies", {
     method: "GET",
     credentials: "include",
   });
@@ -17,7 +17,7 @@ export const fetchCompanies = createAsyncThunk("companies/fetchCompanies", async
 export const fetchCompanyById = createAsyncThunk(
   "companies/fetchCompanyById",
   async (id) => {
-    const response = await fetch(`http://localhost:8080/api/companies/${id}`, {
+    const response = await fetch(`https://crm-mpqk.onrender.com/api/companies/${id}`, {
       method: "GET",
       credentials: "include",
     });
@@ -33,7 +33,7 @@ export const updateCompany = createAsyncThunk(
   "companies/updateCompany",
   async (updatedCompany) => {
     const response = await fetch(
-      `http://localhost:8080/api/companies/${updatedCompany._id}`,
+      `https://crm-mpqk.onrender.com/api/companies/${updatedCompany._id}`,
       {
         method: "PATCH",
         credentials: "include",
